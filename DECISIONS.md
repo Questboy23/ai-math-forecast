@@ -1,0 +1,12 @@
+# DECISIONS (US Eastern)
+- 01:36 Python: system python3 is 3.15; used `~/.local/bin/uv venv --python 3.12 .venv` (uv at ~/.local/bin/uv, the PATH `uv` is a hook shim). sentence-transformers, sklearn, pandas installed.
+- 01:44 Origins: spec lists 2025-07-01 and 2025-08-01, but problems.yaml history starts 2025-08-31, so status at those dates is unknowable. Dropped both. Used 11 origins 2025-09-01..2026-07-01. Test origins unchanged: 2026-01-01..2026-07-01 (7). Train-only origins: 2025-09-01..2025-12-01 (first test origin 2026-01-01 trains on only 2025-09-01 and 2025-10-01 windows [low power]).
+- 01:44 "Open" = informal_status.state == "open" exactly. falsifiable/verifiable/decidable are excluded from risk sets and moving into them is not a resolution (still counted as no event).
+- 01:44 Resolution = open at origin and a non-open, non-falsifiable/verifiable/decidable state at origin+3 months. Resolution date = last_update in the end snapshot, clipped to the window.
+- 01:44 AI-qualifying wiki entry: sections 1a-1d or 2a, outcome 🟢 or 🟡, dated within [resolution-120d, resolution+30d] (site status lags the AI post). Type `new_sol` for 1a-1d, `lit_id` for 2a only. Event = resolved AND qualifying entry. Competing = resolved with none. 2b/2c/2d (formalization, rewriting, computation) and 🔴/⚪ do not qualify.
+- 01:45 Statement text from erdosproblems.com HTML (all 1,221), citations: OpenAlex feature dropped (see PREFLIGHT 6). Reference-list size dropped as a feature because reference lists are current and contain references added after resolution (leakage). Source year = earliest year in the problem's reference keys.
+- 01:45 Corpus: full 739k math/relevant-cs arXiv papers, MiniLM-L6, no subsampling. Embedding runs under caffeinate + auto-restart loop (code/run_embed.sh), chunks in state/emb/.
+- 01:45 Usage % = active block tokens / largest previous block tokens (ccusage has no percent).
+- 01:55 Contamination probe (Haiku, memory only, 788 problems, 68 test-period events): said 'solved' for 5.9% of events (threshold 60%), 7.3% of competing, 8.8% of never-resolved. Feature D NOT contaminated, but it is a side test only per spec. Haiku technique rating (1-7) done for 788 problems.
+- 02:44 PREREGISTRATION.md hashed (36aa4ca93b1e8730dae0573b1c2523163ba0a54ab213be19b5ef8c1b5b76306a) before any test metric. Features computed (bridge: full 739k corpus). Backtest next.
+- 02:45 Problem 1035 is duplicated in problems.yaml (3 snapshot dates); duplicates dropped (first kept) in features and labels. Done before any model fit on test rows.
