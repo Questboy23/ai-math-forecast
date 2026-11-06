@@ -6,6 +6,10 @@ Dated public forecast of which open Erdős problems will be resolved with AI inv
 
 **Backtest result (7 test origins, 2026-01 to 2026-07): H1 not supported (AUC 0.571, CI 0.511 to 0.632). H2 not supported (bridge distance: AUC change -0.004, DeLong p 0.54, permutation p 0.61).** The forecast model (gradient boosting) had pooled test AUC 0.490, so its ranking has no demonstrated skill [low]. Treat the probabilities as base-rate estimates, not a ranking.
 
+## AI disclosure
+
+Reed Ostrov chose the question, the forecasting design and the preregistered backtest. Claude Code (Anthropic) wrote the data-gathering code, the model code and the tests at his direction. The ideas and decisions are his.
+
 ## Files
 - forecast.csv: 593 problems open on 2026-10-22, sorted by P(AI-resolved within 3 months). 12-month column assumes constant hazard [low].
 - PREREGISTRATION.md (SHA-256 in prereg_hash.txt), REPORT.pdf, EPOCH_SUMMARY.md, DECISIONS.md, PREFLIGHT.md, AUDIT_LABELS.md, code/.
