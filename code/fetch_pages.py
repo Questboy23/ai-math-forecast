@@ -1,7 +1,7 @@
 import re, time, os, sys, requests
 from concurrent.futures import ThreadPoolExecutor
 nums=[int(x) for x in re.findall(r'- number: "(\d+)"',open('data/erdosproblems/data/problems.yaml').read())]
-s=requests.Session(); s.headers['User-Agent']='ai-math-forecast-research/0.1 (personguy976@gmail.com)'
+s=requests.Session(); s.headers['User-Agent']='ai-math-forecast-research/0.1 (+https://github.com/Questboy23/ai-math-forecast)'
 def get(n):
     p=f'data/pages/{n}.html'
     if os.path.exists(p): return
