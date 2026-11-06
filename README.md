@@ -1,4 +1,6 @@
-# ai-math-forecast
+# AI Math Forecast: a dated public forecast of which open Erdős problems AI will resolve, with a preregistered backtest.
+
+**593 open problems forecast. The backtest found no skill (AUC 0.57, 95% CI 0.51 to 0.63).**
 
 Dated public forecast of which open Erdős problems will be resolved with AI involvement, plus the preregistered backtest behind it.
 
